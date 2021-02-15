@@ -3,13 +3,13 @@ const router = Router();
 
 
 router.get('/', (req, res) => {
-    res.render('home.hbs');
+    res.render('home.hbs', {title: 'Browse'});
  });
 
  
 
 router.get('/create', (req, res) => {
-   res.render('create.hbs');
+   res.render('create.hbs', {title: 'Create'});
 });
 
 
