@@ -1,12 +1,12 @@
 //ще си извикаме router
 const {Router} = require('express');
 const productController = require('./controllers/productController');
-const aboutController = require('./controllers/aboutController');
+const homeController = require('./controllers/homeController');
 //създавам си инстанция на този раутър
 const router = Router();
 
-router.use('/', productController);
-router.use('/about', aboutController);
+router.use('/', homeController);
+router.use('/products', productController);
 router.get('*', (req, res) => {
     res.render('404.hbs');
     return;
