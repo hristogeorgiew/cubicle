@@ -4,7 +4,7 @@ const fs = require('fs');
 let productsData = require('../config/products.json');
 
 
-function getALL(){
+function getAll(){
     return productsData;
 }
 
@@ -18,6 +18,7 @@ function create(data){
         );
 
         productsData.push(cube);
+        
         fs.writeFile(__dirname + '/../config/products.json', JSON.stringify(productsData), (err) => {
             if(err){
                 console.log(err);
@@ -27,5 +28,6 @@ function create(data){
 }
 
 module.exports = {
-    create
+    create,
+    getAll
 }
