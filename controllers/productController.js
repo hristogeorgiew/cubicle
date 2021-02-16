@@ -1,4 +1,5 @@
 const {Router} = require('express');
+const productService = require('../services/productService');
 const router = Router();
 
 
@@ -11,7 +12,10 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-    console.log(req.body);
+    //validate imputs трябва задължително да имаме валидиране
+   
+
+    productService.create(req.body);
 
     res.redirect('/products');
 });
